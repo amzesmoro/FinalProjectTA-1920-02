@@ -11,6 +11,6 @@ These two algorithms have different approaches. Holt Winters is used for time se
 
 ------
 If there are some improvement, feel free to contact us:
-* Amzesmoro (amzesmoro05@gmail.com)
-* Sandra Simangunsong
+* Amzesmoro Sianturi (amzesmoro05@gmail.com)
+* Sandra Simangunsong (sandrayogi24@gmail.com)
 
