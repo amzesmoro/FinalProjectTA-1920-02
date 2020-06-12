@@ -10,7 +10,12 @@ Predict Univariate SVR
  <br>         
  <p>Prediction using Univariate Support Vector Regression</p>
  <div class="form-group">
-     <p>Table below is prediction with ratio data $(80):$(20) using Univariate SVR</p>  
+     <p>
+        Table below is prediction with ratio data training and data testing is 
+        {{ trainUni }}:{{ testUni }} using Univariate SVR, 
+        with the value parameter are cLR = {{ clrUni }}, C = {{ cUni }}, epsilon = {{ epsilonUni }},
+        lambda = {{ lambdaUni }}, sigma = {{ sigmaUni }}, Number of Iteration = {{ iterationUni }}
+    </p>  
      <br>
      <table class="fixed_table">
          <thead>

@@ -4,7 +4,12 @@ Holt-Winters
 {% endblock %}
 {% block content %}
 <p>Smoothing, Trend and Seasonal Holt-Winters</p>               
-<div class="form-group">                
+<div class="form-group"> 
+    <p>
+        The table below are Smoothing table, Trend table and Seasonal table. 
+        The data that has been calculated using alpha = {{ alpha }}, 
+        beta = {{ beta }} and gamma = {{ gamma }}
+    </p>               
     <table class="fixed_table">   
         <caption>Smoothing</caption>                 
         <thead>
@@ -225,7 +230,7 @@ Holt-Winters
     </table>   
     <br> 
     <div class="row">                        
-        <a class="next-btn" href="{{ url_for('predictHoltWinters') }}">Next</a>                       
+        <a class="next-btn" href="{{ url_for('predict_holt_winters') }}">Next</a>                       
     </div>
 </div>    
 {% endblock %}

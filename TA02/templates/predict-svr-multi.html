@@ -10,7 +10,12 @@ Predict Multivariate SVR
 <br>         
 <p>Prediction using Multivariate Support Vector Regression</p>
 <div class="form-group">
-    <p>Table below is prediction with ratio data $(80):$(20) using Multivariate SVR</p>  
+    <p>
+        Table below is prediction with ratio data training and data testing is 
+        {{ trainMulti }}:{{ testMulti }} using Multivariate SVR, 
+        with the value parameter are cLR = {{ clrMulti }}, C = {{ cMulti }}, epsilon = {{ epsilMulti }},
+        lambda = {{ lambdaMulti }}, sigma = {{ sigmaMulti }}, Number of Iteration = {{ iterationMulti }}
+    </p>
     <br>
     <table class="fixed_table">
         <thead>

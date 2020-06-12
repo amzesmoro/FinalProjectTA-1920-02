@@ -7,11 +7,10 @@ Multivariate SVR
 <div class="form-group">
     <p>
         Table below is the data that has been preprocessing (normalization)
-        with the ratio data is $(80):$(20). 
-        As we know, multivariate using Tingkat Hunian Hotel, Events, Inflasi, USDToRupiah as features.
-        X1 is Hotel Occupancy Rate (Tingkat Hunian Hotel), X2 is Events, X3 is Inflation (Inflasi), X4 is 
-        Exchange Rate USD to Rupiah (USD ke Rupiah) and 
-        y is target. 
+        with the ratio data data training and data testing is {{ trainMulti }}:{{ testMulti }}. 
+        As we know, multivariate using Tingkat Hunian Hotel, Events, Inflasi, USDToRupiah as 
+        features. X1 is Hotel Occupancy Rate (Tingkat Hunian Hotel), X2 is Events, X3 is Inflation 
+        (Inflasi), X4 is Exchange Rate USD to Rupiah (USD ke Rupiah) and y is target. 
     </p>   
     <table class="fixed_table">
         <thead>
@@ -128,13 +127,13 @@ Multivariate SVR
         Before doing prediction with Multivariate SVR, we must fill the form below.
         This form is initialization of parameter value.
     </p>
-    <form action="{{ url_for('predictSvrMultivariate') }}">
+    <form action="{{ url_for('predict_svr_multivariate') }}", method="POST">
         <div class="row">
             <div class="col-25">
                 <label for="value-clr" class="name-label">cLR</label>
             </div>
             <div class="col-75">
-                <input type="number" name="clr-multi" step="0.01" placeholder="Input value of cLR" required>
+                <input type="number" name="clr-multi" step="0.00001" placeholder="Input value of cLR" required>
             </div>
         </div>
         <div class="row">
@@ -142,7 +141,7 @@ Multivariate SVR
                 <label for="value-c" class="name-label">C</label>
             </div>
             <div class="col-75">
-                <input type="number" name="c-multi" step="0.01" placeholder="Input value of C" required>
+                <input type="number" name="c-multi" step="0.00001" placeholder="Input value of C" required>
             </div>
         </div>  
         <div class="row">
@@ -150,7 +149,7 @@ Multivariate SVR
                 <label for="value-epsilon" class="name-label">epsilon</label>
             </div>
             <div class="col-75">
-                <input type="number" name="epsilon-multi" step="0.01" placeholder="Input value of epsilon" required>
+                <input type="number" name="epsilon-multi" step="0.00001" placeholder="Input value of epsilon" required>
             </div>
         </div>
         <div class="row">
@@ -158,7 +157,7 @@ Multivariate SVR
                 <label for="value-lambda" class="name-label">lambda</label>
             </div>
             <div class="col-75">
-                <input type="number" name="lambda-multi" step="0.01" placeholder="Input value of lambda" required>
+                <input type="number" name="lambda-multi" step="0.00001" placeholder="Input value of lambda" required>
             </div>
         </div>                    
         <div class="row">
@@ -166,7 +165,7 @@ Multivariate SVR
                 <label for="value-sigma" class="name-label">sigma</label>
             </div>
             <div class="col-75">
-                <input type="number" name="sigma-multi" step="0.01" placeholder="Input value of sigma" required>
+                <input type="number" name="sigma-multi" step="0.00001" placeholder="Input value of sigma" required>
             </div>
         </div>
         <div class="row">
@@ -174,7 +173,7 @@ Multivariate SVR
                 <label for="value-iteration" class="name-label">Number of Iteration</label>
             </div>
             <div class="col-75">
-                <input type="number" name="iteration-multi" step="0.01" placeholder="Input Number of Iteration" required>
+                <input type="number" name="iteration-multi" step="0.00001" placeholder="Input Number of Iteration" required>
             </div>
         </div>      
         <div class="alert">
