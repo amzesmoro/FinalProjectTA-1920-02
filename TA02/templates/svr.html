@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block title %}
+Support Vector Regression
+{% endblock %}
+{% block content %}
+<p>Time Series Univariate Support Vector Regression</p>                           
+<div class="form-group">
+    <p>Input ratio between data training and data testing</p>
+    <form method="POST" action="{{ url_for('svrUnivariate') }}">
+        <div class="row">
+            <div class="col-25">
+                <label for="training-rasio" class="name-label">Data Training Size</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="train-uni" step="0.01" placeholder="Input Data Training Size" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="testing-rasio" class="name-label">Data Testing Size</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="test-uni" step="0.01" placeholder="Input Data Testing Size" required>
+            </div>
+        </div>                    
+        <div class="row">                        
+            <input type="submit" value="Preprocessing Data">
+        </div>
+    </form>
+</div> 
+<br>
+<p>Time Series Multivariate Support Vector Regression</p>                           
+<div class="form-group">
+    <p>Input ratio between data training and data testing</p>
+    <form method="POST" action="{{ url_for('svrMultivariate') }}">
+        <div class="row">
+            <div class="col-25">
+                <label for="training-rasio" class="name-label">Data Training Size</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="train-multi" step="0.01" placeholder="Input Data Training Size" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="testing-rasio" class="name-label">Data Testing Size</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="test-multi" step="0.01" placeholder="Input Data Training Size" required>
+            </div>
+        </div>                    
+        <div class="row">                        
+            <input type="submit" value="Preprocessing Data">
+        </div>
+    </form>
+</div>   
+<br>                
+<div class="alert">
+    <p>Notes: Select one method that you want to use. If you want to select univariate, please fill in the univariate fields!!</p>
+</div>                
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}
+Holt-Winters
+{% endblock %}
+{% block content %}
+<p>
+    Input value for Parameters Holt-Winters
+</p>               
+<div class="form-group">
+    <form action="{{ url_for('holtWintersSts') }}">
+        <div class="row">
+            <div class="col-25">
+                <label for="value-alpha" class="name-label">Alpha</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="alpha" step="0.01" placeholder="Input Value for Alpha" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-beta" class="name-label">Beta</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="beta" step="0.01" placeholder="Input Value for Beta" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-gamma" class="name-label">Gamma</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="gamma" step="0.01" placeholder="Input Value for Gamma" required>
+            </div>
+        </div>
+        <div class="row">                        
+            <input type="submit" value="Next">                       
+        </div>
+    </form>
+</div>                  
+{% endblock %}
