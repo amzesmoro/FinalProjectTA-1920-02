@@ -102,10 +102,17 @@ footer {
     padding-bottom: 10px;
 }
 
-.list-btn {
+/* .list-btn {
     padding-top: 50px;
     text-align: center;
     padding-bottom: 30px;
+} */
+
+.list-btn-prep-uni,
+.list-btn-prep-multi {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .divider {
@@ -128,14 +135,47 @@ footer {
     width: 35%;  
 }
 
+.btn-prep-svr-uni,
+#btn-preview-prep-svr-uni {
+    background-color:#F1F1F1;
+    border: 2px solid #555555;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    font-size: 20px;   
+    cursor: pointer;
+    padding: 15px 15px;
+    margin: 0px 10px 0px 10px;     
+    transition-duration: 0.4s;  
+    width: 30%;  
+}
+
+.btn-prep-svr-multi,
+#btn-preview-prep-svr-multi {
+    background-color:#F1F1F1;
+    border: 2px solid #555555;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    font-size: 20px;   
+    cursor: pointer;
+    padding: 15px 15px;   
+    margin: 0px 20px 0px 20px; 
+    transition-duration: 0.4s;  
+    width: 45%;  
+}
+
 .btn-holt:hover,
 .btn-svr:hover,
+.btn-prep-svr-uni:hover,
+.btn-prep-svr-multi:hover,
+#btn-preview-prep-svr-uni:hover,
+#btn-preview-prep-svr-multi:hover,
 .next-btn:hover {   
     background-color: #555555;
     color: white;
     font-weight: bold;
 }
-
 
 .name-label {
     padding: 12px 12px 12px 0;
@@ -237,20 +277,20 @@ input[type=submit]:hover {
     padding-bottom: 15px;
 }
 
-.fixed_table tbody {
+.fixed-table tbody {
     overflow: scroll;
-    height: 220px;
+    height: 300px;
     display: block;
 }
 
-.fixed_table thead, 
-.fixed_table tbody tr{
+.fixed-table thead, 
+.fixed-table tbody tr{
     table-layout: fixed;
     width: 100%;
     display: table;
 }
 
-.fixed_table {
+.fixed-table {
     border: 1px solid #ccc;
     border-collapse: collapse;
     margin: 0;
@@ -259,19 +299,19 @@ input[type=submit]:hover {
     table-layout: fixed;
 }
 
-.fixed_table tr {
+.fixed-table tr {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     padding: .35em;
 }
 
-.fixed_table th, 
-.fixed_table td {
+.fixed-table th, 
+.fixed-table td {
     padding: .625em;
     text-align: center;
 }
 
-.fixed_table th {
+.fixed-table th {
     font-size: .85em;
     letter-spacing: .1em;
 }
@@ -290,6 +330,17 @@ tr:nth-child(even) {
     border-color:#ebccd1;
 }
 
+.info p {
+    border-radius: 5px;
+    text-align: justify;   
+    font-size: 16px;
+    margin: 10px;   
+    padding: 10px;   
+    color:#31708f;
+    background-color:#d9edf7;
+    border-color:#bce8f1;
+}
+
 img {
     border-radius: 15px;
 }
@@ -299,6 +350,9 @@ hr {
 }
 
 @media screen and (max-width: 600px) { 
+    h2 {
+        font-size: 18px;
+    }
     .col-25, .col-50 .col-75 {
         width: 100%;
         margin-top: 0;
@@ -322,7 +376,8 @@ hr {
         font-weight: bold;       
     }
 
-    .alert p {
+    .alert p,
+    .info p {
         font-size: 14px;  
         text-align: justify;  
     }
@@ -339,6 +394,16 @@ hr {
         font-size: 16px;   
         padding: 10px 10px;   
         width: 100%;  
+    }
+
+    .btn-prep-svr-uni,
+    .btn-prep-svr-multi,
+    #btn-preview-prep-svr-uni,
+    #btn-preview-prep-svr-multi {
+        font-size: 16px;
+        padding: 10px;
+        width: 90%;
+        margin: 5px;
     }
 
     .navbar {
@@ -384,7 +449,7 @@ hr {
     }
 
     input[type=submit] {
-        font-size: 16px;
+        font-size: 14px;
         padding: 10px 10px;
         margin-top: 10px;
     }
@@ -407,17 +472,17 @@ hr {
         font-size: 10px;
     }
 
-    .fixed_table tbody {
+    .fixed-table tbody {
         overflow: auto;
         height: 480px;
         display: block;
     }
 
-    .fixed_table {
+    .fixed-table {
         border: 0;
     }
 
-    .fixed_table thead {
+    .fixed-table thead {
         border: none;
         clip: rect(0 0 0 0);
         height: 1px;
@@ -428,77 +493,101 @@ hr {
         width: 1px;
     }
 
-    .fixed_table tr {
+    .fixed-table tr {
         border-bottom: 3px solid #ddd;
         display: block;
         margin-bottom: .625em;
     }
 
-    .fixed_table td {
+    .fixed-table td {
         border-bottom: 1px solid #ddd;
         display: block;
         font-size: .8em;
         text-align: right;
     }
 
-    .fixed_table td::before {
+    .fixed-table td::before {
         content: attr(data-label);
         float: left;
         font-weight: bold;
     }
 
-    .fixed_table td:last-child {
+    .fixed-table td:last-child {
         border-bottom: 0;
     }
-
-    .form-upload { 
-        margin-top: -20px;        
-    }
         
-    #upload-text {     
+    #upload-textname-hw,
+    #upload-textname-svr {     
         font-size: 10px;  
         margin-bottom: 10px;   
     }
 
+    #btn-upload-hw,
+    #btn-upload-svr,
+    #btn-upload-data {        
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #upload-textname-hw,
+    #upload-textname-svr {             
+        padding: 10px;
+        width: 100%;  
+        display: inline-block;
+    }
+
+    #preview-prep-svr-uni,
+    #preview-prep-svr-multi {                                    
+        margin: 10px 5px;
+        padding: 50px;
+        
+    }
 }
 
-.form-upload { 
-    padding-top: 40px; 
-    padding-bottom: 10px;    
+.form-upload {     
+    margin-top: 20px;  
+    margin-bottom: 20px;
     text-align: center;
 }
   
-#upload-text {     
+#upload-textname-hw,
+#upload-textname-svr {     
     color: #aaa;    
     border: 2px solid black;
     border-radius: 10px;
     padding: 12px;
-    width: 50%;  
+    width: 70%;  
     display: inline-block;
 }
   
-#btn-upload,
-#btn-preview-data {
+#btn-upload-hw,
+#btn-upload-svr,
+#btn-upload-data {
     padding: 12px;    
     background-color:cadetblue;    
     border-radius: 10px;
     cursor: pointer;   
     color: #fff;
-    font-size: 16px;    
+    font-size: 16px;  
     text-transform: uppercase;
     font-weight: bold;
     border: 2px solid black;    
 }
   
-#btn-upload:hover,
-#btn-preview-data:hover {
+#btn-upload-hw:hover,
+#btn-upload-svr:hover,
+#btn-upload-data:hover {
     background-color: darkcyan;
 }
 
-#preview-data {    
-    background-color: lavender;
-    display: none;    
-    padding-top: 20px;
-    margin: 10px 50px 10px 50px;
+#preview-prep-svr-uni,
+#preview-prep-svr-multi {    
+    background-color: lavender;     
+    padding: 20px;
+    margin: 20px 35px;
     border-radius: 10px;
+    border: 2px solid black;
+    display: none;   
 }

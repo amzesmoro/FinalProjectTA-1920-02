@@ -5,34 +5,37 @@ navBarToggle.addEventListener("click", function() {
     mainNav.classList.toggle("active");
 });
 
+let uploadFileHw = document.getElementById("upload-file-hw");
+let uploadFileSvr = document.getElementById("upload-file-svr");
+let uploadBtnHw = document.getElementById("btn-upload-hw");
+let uploadBtnSvr = document.getElementById("btn-upload-svr");
+let uploadTextNameHw = document.getElementById("upload-textname-hw");
+let uploadTextNameSvr = document.getElementById("upload-textname-svr");
 
-let uploadFile = document.getElementById("upload-file");
-let uploadBtn = document.getElementById("btn-upload");
-let uploadText = document.getElementById("upload-text");
-
-uploadBtn.addEventListener("click", function() {
-    uploadFile.click();
+uploadBtnHw.addEventListener("click", function() {
+    uploadFileHw.click();
 });
 
-uploadFile.addEventListener("change", function() {
-  if (uploadFile.value) {
-    uploadText.innerHTML = uploadFile.value.match(
+uploadBtnSvr.addEventListener("click", function() {
+  uploadFileSvr.click();
+});
+
+uploadFileHw.addEventListener("change", function() {
+  if (uploadFileHw.value) {
+    uploadTextNameHw.innerHTML = uploadFileHw.value.match(
       /[\/\\]([\w\d\s\.\-\(\)]+)$/
     )[1];
   } else {
-    uploadText.innerHTML = "No file chosen, yet. Please upload a file.";
+    uploadTextNameHw.innerHTML = "No file chosen, yet. Please upload a file.";
   }
 });
 
-
-let previewData = document.getElementById("preview-data");
-let previewDataBtn = document.getElementById("btn-preview-data");
-
-previewDataBtn.addEventListener("click", function() {
-  var x = previewData
-  if (x.style.display === "block") {
-      x.style.display = "none";
+uploadFileSvr.addEventListener("change", function() {
+  if (uploadFileSvr.value) {
+    uploadTextNameSvr.innerHTML = uploadFileSvr.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
   } else {
-      x.style.display = "block";
+    uploadTextNameSvr.innerHTML = "No file chosen, yet. Please upload a file.";
   }
 });

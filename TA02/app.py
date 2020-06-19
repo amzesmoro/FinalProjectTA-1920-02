@@ -6,7 +6,8 @@ import pandas as pd
 import csv
 
 
-UPLOAD_PATHS = "/home/amzesmoro/Documents/Semester 7/TA/implementasi/implement_to_flask/ta_02/static/upload_files"
+UPLOAD_PATHS = "/home/amzesmoro/Documents/Semester 7/TA/implementasi/implement_to_flask/FinalProjectTA-1920-02/TA02/static/upload_files"
+
 ALLOWED_EXTENSIONS ={ 'xlsx', 'xls', 'csv'}
 
 app = Flask(__name__)
@@ -30,9 +31,27 @@ def home():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config["UPLOAD_PATHS"], filename))
-            #return redirect(url_for("uploaded_file", filename=filename))
-            return redirect(request.url)    
+            #return redirect(url_for("uploaded_file", filename=filename))            
+            return redirect(request.url)
     return render_template("home.html")
+
+# @app.route("/", methods=["GET", "POST"])    
+# def home():
+#     if request.method == "POST":
+#         f = request.form["file"]
+#         data = []
+#         with open(f) as file:
+#             csvfile = csv.reader(file)
+#             for row in csvfile:
+#                 data.append(row)
+#         data = pd.DataFrame(data)                
+#         return render_template("home.html", shape=data.shape, data=data.to_html())
+#     return render_template("home.html")
+
+@app.route("/test")
+def test():
+    df = pd.read_csv("/home/amzesmoro/Documents/Semester 7/TA/implementasi/dataset_sample.csv")
+    return df.to_html()
 
 @app.route("/uploads/<filename>")        
 def uploaded_file(filename):
@@ -56,9 +75,9 @@ def holt_winters_sts():
 def predict_holt_winters():
     return render_template("predict-holt-winters.html")
 
-@app.route("/svr")
-def svr():
-    return render_template("svr.html")
+@app.route("/svr-preprocessing")
+def svr_preprocessing():
+    return render_template("svr_preprocessing.html")
 
 @app.route("/svr-uni", methods=["POST"])
 def svr_univariate():
@@ -66,8 +85,6 @@ def svr_univariate():
         req = request.form
         trainUni = req["train-uni"]
         testUni = req["test-uni"]
-        # trainMulti = req["train-multi"]
-        # testMulti = req["test-multi"]
         return render_template("svr-uni.html", trainUni = trainUni, testUni = testUni)
     return render_template("svr-uni.html")
 

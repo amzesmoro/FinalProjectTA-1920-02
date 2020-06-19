@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block title %}
+Support Vector Regression
+{% endblock %}
+{% block content %}
+<p>Preprocessing Support Vector Regression</p>                           
+<div class="form-group">                
+    <div class="prep-uni">
+        <h2>Univariate Support Vector Regression</h2>
+        <br>
+        <p>Step while doing Preprocessing Univariate SVR are: Normalization, after that click Reframe Data and then click Preview Data</p>
+        <div class="list-btn-prep-uni">
+            <button type="button" class="btn-prep-svr-uni">Normalization</button>                      
+            <button type="button" class="btn-prep-svr-uni">Reframe Data</button>                      
+            <button type="button" id="btn-preview-prep-svr-uni" onclick="previewPrepSvr('preview-prep-svr-uni')">Preview Preprocessing</button>           
+        </div>
+        <div id="preview-prep-svr-uni">   
+            <p>Preview Data Preprocessing Univariate Support Vector Regression</p>  
+            <p>$data Univariate svr yang sudah di prepocessing dalam bentuk df</p>
+            <br>
+            <p>Input ratio between data training and data testing</p>
+            <form action="{{ url_for('svr_univariate') }}" method="POST">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="training-rasio" class="name-label">Data Training Size</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" name="train-uni" step="0.01" placeholder="Input Data Training Size">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="testing-rasio" class="name-label">Data Testing Size</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" name="test-uni" step="0.01" placeholder="Input Data Testing Size">
+                    </div>
+                </div>                    
+                <div class="row">                        
+                    <input type="submit" value="Preprocessing Univariate">
+                </div>
+            </form>                                                           
+        </div> 
+    </div>
+    <br>
+    <div class="prep-multi">
+        <h2>Multivariate Support Vector Regression</h2>
+        <br>
+        <p>Step while doing Preprocessing Multivariate SVR are: Normalization and then click Preview Data</p>
+        <div class="list-btn-prep-multi">
+            <button type="button" class="btn-prep-svr-multi">Normalization</button>                                                                     
+            <button type="button" id="btn-preview-prep-svr-multi" onclick="previewPrepSvr('preview-prep-svr-multi')">Preview Preprocessing</button>         
+        </div>
+        <div id="preview-prep-svr-multi">   
+            <p>Preview Data Preprocessing Multivariate Support Vector Regression</p>  
+            <p>$data Multivariate svr yang sudah di prepocessing dalam bentuk df</p>
+            <br>
+            <p>Input ratio between data training and data testing</p>
+            <form action="{{ url_for('svr_multivariate') }}" method="POST">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="training-rasio" class="name-label">Data Training Size</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" name="train-multi" step="0.01" placeholder="Input Data Training Size">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="testing-rasio" class="name-label">Data Testing Size</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" name="test-multi" step="0.01" placeholder="Input Data Training Size">
+                    </div>
+                </div>                    
+                <div class="row">                        
+                    <input type="submit" value="Preprocessing Multivariate">
+                </div>
+            </form>                                                           
+        </div>
+    </div>             
+</div>               
+{% endblock %}
+<script>
+    function previewPrepSvr(id) {
+        var x = document.getElementById(id);
+        if(x.style.display == "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block"
+        }
+    }
+</script>
