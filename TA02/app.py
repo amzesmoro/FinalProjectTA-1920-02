@@ -77,7 +77,7 @@ def predict_holt_winters():
 
 @app.route("/svr-preprocessing")
 def svr_preprocessing():
-    return render_template("svr_preprocessing.html")
+    return render_template("svr-preprocessing.html")
 
 @app.route("/svr-uni", methods=["POST"])
 def svr_univariate():

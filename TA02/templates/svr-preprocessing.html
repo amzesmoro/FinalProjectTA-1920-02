@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block title %}
-Support Vector Regression
+Preprocessing Support Vector Regression
 {% endblock %}
 {% block content %}
 <p>Preprocessing Support Vector Regression</p>                           
@@ -25,7 +25,7 @@ Support Vector Regression
                         <label for="training-rasio" class="name-label">Data Training Size</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" name="train-uni" step="0.01" placeholder="Input Data Training Size">
+                        <input type="number" name="train-uni" step="0.01" placeholder="Input Data Training Size" required>
                     </div>
                 </div>
                 <div class="row">
@@ -33,7 +33,7 @@ Support Vector Regression
                         <label for="testing-rasio" class="name-label">Data Testing Size</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" name="test-uni" step="0.01" placeholder="Input Data Testing Size">
+                        <input type="number" name="test-uni" step="0.01" placeholder="Input Data Testing Size" required>
                     </div>
                 </div>                    
                 <div class="row">                        
@@ -62,7 +62,7 @@ Support Vector Regression
                         <label for="training-rasio" class="name-label">Data Training Size</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" name="train-multi" step="0.01" placeholder="Input Data Training Size">
+                        <input type="number" name="train-multi" step="0.01" placeholder="Input Data Training Size" required>
                     </div>
                 </div>
                 <div class="row">
@@ -70,7 +70,7 @@ Support Vector Regression
                         <label for="testing-rasio" class="name-label">Data Testing Size</label>
                     </div>
                     <div class="col-75">
-                        <input type="number" name="test-multi" step="0.01" placeholder="Input Data Training Size">
+                        <input type="number" name="test-multi" step="0.01" placeholder="Input Data Training Size" required>
                     </div>
                 </div>                    
                 <div class="row">                        
@@ -79,8 +79,7 @@ Support Vector Regression
             </form>                                                           
         </div>
     </div>             
-</div>               
-{% endblock %}
+</div>           
 <script>
     function previewPrepSvr(id) {
         var x = document.getElementById(id);
@@ -90,4 +89,5 @@ Support Vector Regression
             x.style.display = "block"
         }
     }
-</script>
+</script>  
+{% endblock %}
