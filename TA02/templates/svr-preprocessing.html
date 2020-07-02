@@ -4,10 +4,13 @@ Preprocessing Support Vector Regression
 {% endblock %}
 {% block content %}
 <p>Preprocessing Support Vector Regression</p>                           
-<div class="form-group">                
-    <div class="prep-uni">
+<div class="form-group">  
+    <p>Dataset</p>
+    {{ data | safe }}
+    <br>
+    <div class="prep-uni">        
         <h2>Univariate Support Vector Regression</h2>
-        <br>
+        <br>       
         <p>Step while doing Preprocessing Univariate SVR are: Normalization, after that click Reframe Data and then click Preview Data</p>
         <div class="list-btn-prep-uni">
             <button type="button" class="btn-prep-svr-uni">Normalization</button>                      

@@ -33,18 +33,18 @@ Home
 <br>
 <div class="form-group">
     <h2>Holt-Winters</h2>    
-    <form class="form-upload" action="{{ url_for('holt_winters') }}">
-        <input type="file" name="file" id="upload-file-hw" accept=".xlsx, .xls, .csv" hidden="hidden">
+    <form class="form-upload" action="{{ url_for('holt_winters') }}", method="POST">
+        <input type="file" name="file" id="upload-file-hw" accept=".csv" hidden="hidden">
         <span id="upload-textname-hw">No file chosen, yet. Please upload a file.</span>
         <button type="button" id="btn-upload-hw">Browse File</button>      
         <button type="submit" id="btn-upload-data">Process Data</button>
     </form>
     <h2>Support Vector Regression</h2>
-    <form class="form-upload" action="{{ url_for('svr_preprocessing') }}">
-        <input type="file" name="file" id="upload-file-svr" accept=".xlsx, .xls, .csv" hidden="hidden">
+    <form class="form-upload" action="{{ url_for('svr_preprocessing') }}", method="POST" enctype="multipart/form-data">
+        <input type="file" name="csv_data" id="upload-file-svr" accept=".csv" hidden="hidden">
         <span id="upload-textname-svr">No file chosen, yet. Please upload a file.</span>
         <button type="button" id="btn-upload-svr">Browse File</button>      
-        <button type="submit" id="btn-upload-data">Process Data</button>
+        <button type="su`bmit" id="btn-upload-data">Process Data</button>
     </form>
 </div>  
 

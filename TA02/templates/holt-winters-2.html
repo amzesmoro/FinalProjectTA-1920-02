@@ -3,159 +3,41 @@
 Holt-Winters
 {% endblock %}
 {% block content %}
-<p>Smoothing, Trend and Seasonal Holt-Winters</p>               
-<div class="form-group"> 
+<p>Smoothing, Trend and Seasonal Holt-Winters</p>
+<div class="form-group">                
     <p>
         The table below are Smoothing table, Trend table and Seasonal table. 
         The data that has been calculated using alpha = {{ alpha }}, 
-        beta = {{ beta }} and gamma = {{ gamma }}
-    </p>               
-    <table class="fixed-table">   
-        <caption>Smoothing</caption>                 
-        <thead>
-            <tr>
-                <th scope="col">Name of Month</th>
-                <th scope="col">Smoothing Additive</th>
-                <th scope="col">Smoothing Multiplicative</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td scope="row" data-label="Month">January</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">February</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">March</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">April</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">May</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">June</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">July</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">August</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">September</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">October</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">November</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">December</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <table class="fixed-table">   
-        <caption>Trend</caption>                 
-        <thead>
-            <tr>
-                <th scope="col">Name of Month</th>
-                <th scope="col">Trend Additive</th>
-                <th scope="col">Trend Multiplicative</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td scope="row" data-label="Month">January</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">February</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">March</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">April</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">May</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">June</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">July</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">August</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">September</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">October</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">November</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-            <tr>
-                <td scope="row" data-label="Month">December</td>
-                <td data-label="Additive">1</td>
-                <td data-label="Multiplicative">1</td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
+        beta = {{ beta }}, gamma = {{ gamma }} and number of iteration is {{ iteration }}
+    </p>      
+</div>
+<br>              
+<p>Smoothing</p>
+<div class="form-group">                
+    <div class="row">                    
+        <div class="col-50">
+            <h4>Additive=7.012</h4>
+        </div>                  
+        <div class="col-50">
+            <h4>Multiplicative=6.012</h4>
+        </div>                    
+    </div>                
+</div>
+<br>
+<p>Trend</p>
+<div class="form-group">                
+    <div class="row">                    
+        <div class="col-50">
+            <h4>Additive=7.012</h4>
+        </div>                  
+        <div class="col-50">
+            <h4>Multiplicative=6.012</h4>
+        </div>                    
+    </div>                
+</div>
+<br>
+<p>Seasonal</p>               
+<div class="form-group"> 
     <table class="fixed-table">   
         <caption>Seasonal</caption>                 
         <thead>
