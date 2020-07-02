@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block title %}
+Multivariate SVR
+{% endblock %}
+{% block content %}
+<p>Time Series Multivariate Support Vector Regression</p>                           
+<div class="form-group">
+    <p>Dataset</p>
+    {{ data | safe }}
+    <br><br>
+    <p>Normalization</p>
+    {{ data_scale | safe }}
+    <br><br>
+    <p>Prediction based on Ratio Data 80:20</p>
+    <p>MAPE Multivariate> SVR based on Ratio 80:20 is {{ mape_80 }}%</p>
+    {{ prediction_80 | safe }}
+    <br><br>   
+    <br><br>
+    <p>Prediction based on Ratio Data 90:10</p>
+    <p>MAPE Multivariate> SVR based on Ratio 90:10 is (10)%</p>
+    <table class="fixed-table">
+        <thead>
+            <tr>
+                <th scope="col">Name of Month</th>
+                <th scope="col">y</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row" data-label="Month">January</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">February</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">March</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">April</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">May</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">June</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">July</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">August</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">September</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">October</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">November</td>
+                <td data-label="y">5.000</td>
+            </tr>
+            <tr>
+                <td scope="row" data-label="Month">Descember</td>
+                <td data-label="y">5.000</td>
+            </tr>
+        </tbody>
+    </table>
+</div>  
+{% endblock %}

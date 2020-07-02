@@ -1,0 +1,21 @@
+{% extends "layout.html" %}The data that has been calculated using alpha = {{ alpha }}, beta = {{ beta }}, gamma = {{ gamma }} and number of iteration is {{ iteration }}
+{% block title %}
+Holt-Winters
+{% endblock %}
+{% block content %}
+<p>Holt-Winters</p>               
+<div class="form-group">
+    <p>
+        The data that has been calculated using alpha = {{ alpha }}, 
+        beta = {{ beta }}, gamma = {{ gamma }}
+    </p>
+    <br>
+    <p>Prediction Using Additive</p>    
+    <p>MAPE of Holt-Winters Additive= {{ mape_additive }}%</p>
+    {{ prediction_additive | safe}}
+    <br><br>
+    <p>Prediction Using Multiplicative</p>    
+    <p>MAPE of Holt-Winters Multiplicative= {{ mape_multiplicative }}%</p>
+    {{ prediction_multiplicative | safe}}
+</div>            
+{% endblock %}
