@@ -7,14 +7,7 @@ Holt-Winters
 <div class="form-group">
     <p>Dataset</p>
     {{ data | safe }}
-    <br><br>
-    <!-- <p>Prediction Using Additive</p>    
-    <p>MAPE of Holt-Winters Additive= {{ mape_additive }}%</p>
-    {{ prediction_additive | safe}}
-    <br><br>
-    <p>Prediction Using Multiplicative</p>    
-    <p>MAPE of Holt-Winters Multiplicative= {{ mape_multiplicative }}%</p>
-    {{ prediction_multiplicative | safe}} -->
+    <br>
     <form action="{{ url_for('predict_holt_winters') }}" method="POST">        
         <div class="row">
             <div class="col-25">
@@ -42,7 +35,7 @@ Holt-Winters
         </div>
         <div class="info">
             <p>                            
-                Suggestion from us, best parameter values to initialization of Smoothing, Trend and Seasonal from 2012 - 2019 are: 
+                Suggestion from us, best parameter values to initialization of Smoothing, Trend and Seasonal from 2011 - 2019 are: 
                 alpha smaller than 0.5, beta smaller than 0.5, gamma greater than 0.5
             </p>
         </div>

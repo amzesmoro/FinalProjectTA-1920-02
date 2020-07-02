@@ -8,7 +8,29 @@ Holt-Winters
     <p>
         The data that has been calculated using alpha = {{ alpha }}, 
         beta = {{ beta }}, gamma = {{ gamma }}
-    </p>
+    </p>    
+    <br>
+    <h4>Smoothing Awal</h4>
+    <br>
+    <p>Smoothing Awal Additive = {{ smoothingadd }}</p>
+    <br>
+    <p>Smoothing Awal Multiplicative = {{ smoothingmul }}</p>
+    <br>
+    <h4>Trend Awal</h4>
+    <br>
+    <p>Trend Awal Additive = {{ trendadd }}</p> 
+    <br>
+    <p>Trend Awal Multiplicative = {{ trendmul }}</p>
+    <br>
+    <h4>Seasonal Awal</h4>
+    <br>
+    <p>Seasonal Awal Additive</p>
+    <br>
+    {{ df_musimanadd | safe }} 
+    <br>
+    <p>Seasonal Awal Multiplicative</p>
+    <br>
+    {{ df_musimanmul | safe }}   
     <br>
     <p>Prediction Using Additive</p>    
     <p>MAPE of Holt-Winters Additive= {{ mape_additive }}%</p>

@@ -545,8 +545,7 @@ def holt_winters():
 
 @app.route("/predict-holt-winters", methods=["GET", "POST"])
 def predict_holt_winters():
-    if request.method == "POST":
-
+    if request.method == "POST":        
         req = request.form
         alpa = float(req["alpha"])
         beta = float(req["beta"])
@@ -565,11 +564,8 @@ def predict_holt_winters():
         nilaiGamma = []
         nilaiMAPEAdditive = []
 
-        # alpa = request.form["alpha"]
         nilaiAlpa.append(alpa)
-        # beta = request.form["beta"]
         nilaiBeta.append(beta)
-        # gamma = request.form["gamma"]
         nilaiGamma.append(gamma)
 
         nilaiSmoothingAdditive = smoothingAwal(data_additive)    
@@ -610,6 +606,16 @@ def predict_holt_winters():
         trenAdd.append(nilaiTrenAdditive)
         hasilPrediksiTrainingAdd.append(predictAdditive)
 
+        smoothingadd = nilaiSmoothingAdditive[0]        
+
+        musimanadd = nilaiMusimanAdditive[0:12]
+        df_musimanadd = pd.DataFrame(musimanadd,
+                    columns=["Nilai Musiman"],
+                    index=['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 
+                                'Agustus', 'September', 'Oktober', 'November', 'Desember'])
+
+        trendadd = nilaiTrenAdditive[0]        
+        
         MAPEterkecilAdd = nilaiMAPEAdditive[0]
         alpaFinalAdd = nilaiAlpa[0]
         betaFinalAdd = nilaiBeta[0]
@@ -651,11 +657,8 @@ def predict_holt_winters():
         nilaiGamma = []
         nilaiMAPEMultiplicative = []
 
-        # alpa = 0.241
         nilaiAlpa.append(alpa)
-        # beta = 0.001
         nilaiBeta.append(beta)
-        # gamma = 0.724
         nilaiGamma.append(gamma)
 
         nilaiSmoothingMultiplicative = smoothingAwal(data_multiplicative)
@@ -696,6 +699,16 @@ def predict_holt_winters():
         trenMul.append(nilaiTrenMultiplicative)
         hasilPrediksiTrainingMul.append(predictMultiplicative)
 
+        smoothingmul = nilaiSmoothingMultiplicative[0]
+
+        musimanmul = nilaiMusimanMultiplicative[0:12]
+        df_musimanmul = pd.DataFrame(musimanmul,
+                    columns=["Nilai Musiman"],
+                    index=['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 
+                                'Agustus', 'September', 'Oktober', 'November', 'Desember'])
+        
+        trendmul = nilaiTrenMultiplicative[0]
+        
         MAPEterkecilMul = nilaiMAPEMultiplicative[0]
         alpaFinalMul = nilaiAlpa[0]
         betaFinalMul = nilaiBeta[0]
@@ -729,7 +742,11 @@ def predict_holt_winters():
             mape_additive = MAPEAdditive, 
             prediction_additive = df_prediction_add.to_html(classes = "fixed-table"), 
             mape_multiplicative = MAPEMultiplicative, 
-            prediction_multiplicative = df_prediction_mul.to_html(classes = "fixed-table"))
+            prediction_multiplicative = df_prediction_mul.to_html(classes = "fixed-table"),
+            smoothingadd = smoothingadd, trendadd = trendadd, 
+            smoothingmul = smoothingmul, trendmul = trendmul,
+            df_musimanadd = df_musimanadd.to_html(classes = "fixed-table"),
+            df_musimanmul = df_musimanmul.to_html(classes = "fixed-table"))
     return render_template("predict-holt-winters.html")
     
 @app.route("/svr-uni", methods=["GET", "POST"])
@@ -743,7 +760,27 @@ def svr_uni():
                 data.append(row)
         data = pd.DataFrame(data)
 
-        # Univariate 80:20
+        dataset = pd.read_csv('dataset_mancanegara_kualanamu.csv', index_col='BulanTahun')
+        dataset = dataset[['DataAktual']]
+
+        scaler = MinMaxScaler(feature_range=(0,1))
+        col_to_norm = ['DataAktual']
+        dataset[col_to_norm] = scaler.fit_transform(dataset[col_to_norm])
+
+        reorder_cols = ['y_4', 'y_3', 'y_2', 'y_1', 'DataAktual']
+        df_reframe = reframe_to_supervised(dataset)
+        df_reframe = df_reframe.reindex(columns=reorder_cols)
+        dataset_univariate = df_reframe.dropna()
+
+        return render_template("svr-uni.html", 
+            data = data.to_html(classes="fixed-table", header=False, index=False), 
+            data_scaled = dataset[col_to_norm].to_html(classes="fixed-table"), 
+            data_reframed = df_reframe.dropna().to_html(classes="fixed-table"))  
+    return render_template("svr-uni.html")
+
+@app.route("/predict-svr-uni", methods=["GET", "POST"])
+def predict_svr_uni():
+    if request.method == "POST":
         dataset = pd.read_csv('dataset_mancanegara_kualanamu.csv', index_col='BulanTahun')
         dataset = dataset[['DataAktual']]
 
@@ -763,19 +800,21 @@ def svr_uni():
         X = dataset_univariate[features]
         y = dataset_univariate[target]
 
-        # Splitting Data 80:20
+        # Splitting Data
+        train_uni = int(request.form["train-uni"])
+        test_uni = int(request.form["test-uni"])
         
-        split_dataset = int(h0.8*len(X))
+        split_dataset = int((train_uni/100)*len(X))
 
         X_train, X_test = X[:split_dataset], X[split_dataset:]
         y_train, y_test = y[:split_dataset], y[split_dataset:]
 
-        cLR = 0.01
-        C = 100
-        epsilon = 0.001
-        _lambda = 0.001
-        sigma = 1
-        iteration = 100
+        cLR = float(request.form["clr-uni"])
+        C = float(request.form["c-uni"])
+        epsilon = float(request.form["epsilon-uni"])
+        _lambda = float(request.form["lambda-uni"])
+        sigma = float(request.form["sigma-uni"])
+        iteration = int(request.form["iteration-uni"])
 
         df_distance_train = calculate_distance_train(X_train)
 
@@ -876,13 +915,12 @@ def svr_uni():
 
         mape_test = calculate_mape(df_denormalized_y_test, df_denormalized_y_pred_test)
 
-        return render_template("svr-uni.html", 
-            data = data.to_html(classes="fixed-table", header=False, index=False), 
-            data_scale = dataset[col_to_norm].to_html(classes="fixed-table"), 
-            data_reframe=df_reframe.dropna().to_html(classes="fixed-table"), 
-            prediction_80=df_denormalized_y_pred_test.to_html(classes="fixed-table"), 
-            mape_80 = mape_test)  
-    return render_template("svr-uni.html")   
+        return render_template("predict-svr-uni.html", 
+            predictionUni = df_denormalized_y_pred_test.to_html(classes="fixed-table"), 
+            trainUni = train_uni, testUni = test_uni, clrUni = cLR, 
+            cUni = C, epsilonUni = epsilon, lambdaUni = _lambda, sigmaUni = sigma, 
+            iterationUni = iteration, mape_test = mape_test)  
+    return render_template("predict-svr-uni.html")   
 
 @app.route("/svr-multi", methods=["GET", "POST"])
 def svr_multi():
@@ -895,7 +933,24 @@ def svr_multi():
                 data.append(row)
         data = pd.DataFrame(data)
 
-        # Multivariate 80:20
+        dataset_multivariate = pd.read_csv('dataset_mancanegara_kualanamu.csv', index_col='BulanTahun')
+
+        scaler = MinMaxScaler(feature_range=(0,1))
+
+        features_to_norm = ['TingkatHunianHotel(%)','Events','Inflasi','USDToRupiah','DataAktual']
+        dataset_multivariate[features_to_norm] = scaler.fit_transform(dataset_multivariate[features_to_norm])
+
+        dataset_multivariate.columns = ['X1', 'X2', 'X3', 'X4', 'y']
+
+        return render_template("svr-multi.html", 
+            data = data.to_html(classes="fixed-table", header=False, index=False),
+            data_scaled = dataset_multivariate.to_html(classes="fixed-table")) 
+    return render_template("svr-multi.html")
+
+@app.route("/predict-svr-multi", methods=["GET", "POST"])
+def predict_svr_multi():
+    if request.method == "POST":       
+
         dataset_multivariate = pd.read_csv('dataset_mancanegara_kualanamu.csv', index_col='BulanTahun')
 
         scaler = MinMaxScaler(feature_range=(0,1))
@@ -911,16 +966,19 @@ def svr_multi():
         y = dataset_multivariate[target]
 
         # Splitting Data
-        split_dataset = int(0.8*len(X))
+        train_multi = int(request.form["train-multi"])
+        test_multi = int(request.form["test-multi"])
+
+        split_dataset = int((train_multi/100)*len(X))
         X_train, X_test = X[:split_dataset], X[split_dataset:]
         y_train, y_test = y[:split_dataset], y[split_dataset:]
 
-        cLR = 0.01
-        C = 100
-        epsilon = 0.001
-        _lambda = 0.001
-        sigma = 1
-        iteration = 50
+        cLR = float(request.form["clr-multi"])
+        C = float(request.form["c-multi"])
+        epsilon = float(request.form["epsilon-multi"])
+        _lambda = float(request.form["lambda-multi"])
+        sigma = float(request.form["sigma-multi"])
+        iteration = int(request.form["iteration-multi"])
 
         df_distance_train = calculate_distance_train(X_train)
 
@@ -1021,12 +1079,12 @@ def svr_multi():
 
         mape_test = calculate_mape(df_denormalized_y_test, df_denormalized_y_pred_test)
 
-        return render_template("svr-multi.html", 
-            data = data.to_html(classes="fixed-table", header=False, index=False),
-            data_scale = dataset_multivariate.to_html(classes="fixed-table"),
-            prediction_80 = df_denormalized_y_pred_test.to_html(classes="fixed-table"), 
-            mape_80 = mape_test) 
-    return render_template("svr-multi.html")
+        return render_template("predict-svr-multi.html",
+            predictionMulti = df_denormalized_y_pred_test.to_html(classes="fixed-table"),
+            trainMulti = train_multi, testMulti = test_multi, clrMulti = cLR, 
+            cMulti = C, epsilonMulti = epsilon, lambdaMulti = _lambda, sigmaMulti = sigma, 
+            iterationMulti = iteration, mape_test = mape_test) 
+    return render_template("predict-svr-multi.html")
 
 @app.route("/about/")
 def about():
