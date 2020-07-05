@@ -13,6 +13,9 @@ Multivariate SVR
         lambda = {{ lambdaMulti }}, sigma = {{ sigmaMulti }}, Number of Iteration = {{ iterationMulti }}<br>
         MAPE Multivariate SVR based on Ratio {{ trainMulti }}:{{ testMulti }} is {{ mape_test }}%
     </p>   
-    {{ predictionMulti | safe }}    
+    {{ predictionMulti | safe }}  
+    <div class="row">
+        <a href="{{ url_for('home') }}"><button type="button" class="next-btn">Done Prediction</button></a>
+    </div>  
 </div>  
 {% endblock %}

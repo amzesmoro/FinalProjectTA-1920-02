@@ -14,5 +14,8 @@ Univariate SVR
         MAPE Univariate SVR based on Ratio {{ trainUni }}:{{ testUni }} is {{ mape_test }}%
     </p>   
     {{ predictionUni | safe }}    
+    <div class="row">
+        <a href="{{ url_for('home') }}"><button type="button" class="next-btn">Done Prediction</button></a>
+    </div>
 </div>  
 {% endblock %}

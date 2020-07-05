@@ -10,20 +10,24 @@ Holt-Winters
         beta = {{ beta }}, gamma = {{ gamma }}
     </p>    
     <br>
-    <h4>Smoothing Awal</h4>
-    <br>
-    <p>Smoothing Awal Additive = {{ smoothingadd }}</p>
-    <br>
-    <p>Smoothing Awal Multiplicative = {{ smoothingmul }}</p>
-    <br>
-    <h4>Trend Awal</h4>
-    <br>
-    <p>Trend Awal Additive = {{ trendadd }}</p> 
-    <br>
-    <p>Trend Awal Multiplicative = {{ trendmul }}</p>
+    <div class="row">
+        <div class="col-50">            
+            <h4>
+                Smoothing Awal<br>
+                Additive: {{ smoothingadd }}<br>
+                Multiplicative: {{ smoothingmul }}
+            </h4>
+        </div>
+        <div class="col-50">            
+            <h4>
+                Trend Awal<br>
+                Additive: {{ trendadd }}<br>
+                Multiplicative: {{ trendmul }}
+            </h4>
+        </div>
+    </div>
     <br>
     <h4>Seasonal Awal</h4>
-    <br>
     <p>Seasonal Awal Additive</p>
     <br>
     {{ df_musimanadd | safe }} 
@@ -38,6 +42,9 @@ Holt-Winters
     <br><br>
     <p>Prediction Using Multiplicative</p>    
     <p>MAPE of Holt-Winters Multiplicative= {{ mape_multiplicative }}%</p>
-    {{ prediction_multiplicative | safe}}
+    {{ prediction_multiplicative | safe}}    
+    <div class="row">
+        <a href="{{ url_for('home') }}"><button type="button" class="next-btn">Done Prediction</button></a>
+    </div>
 </div>            
 {% endblock %}

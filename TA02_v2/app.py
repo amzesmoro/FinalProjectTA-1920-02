@@ -743,8 +743,8 @@ def predict_holt_winters():
             prediction_additive = df_prediction_add.to_html(classes = "fixed-table"), 
             mape_multiplicative = MAPEMultiplicative, 
             prediction_multiplicative = df_prediction_mul.to_html(classes = "fixed-table"),
-            smoothingadd = smoothingadd, trendadd = trendadd, 
-            smoothingmul = smoothingmul, trendmul = trendmul,
+            smoothingadd = round(smoothingadd, 2), trendadd = round(trendadd, 2), 
+            smoothingmul = round(smoothingmul, 2), trendmul = round(trendmul, 2),
             df_musimanadd = df_musimanadd.to_html(classes = "fixed-table"),
             df_musimanmul = df_musimanmul.to_html(classes = "fixed-table"))
     return render_template("predict-holt-winters.html")
