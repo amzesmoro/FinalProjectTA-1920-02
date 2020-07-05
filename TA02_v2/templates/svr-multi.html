@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block title %}
+Multivariate SVR
+{% endblock %}
+{% block content %}
+<p>Time Series Multivariate Support Vector Regression</p>                           
+<div class="form-group">
+    <p>Dataset</p>
+    {{ data | safe }}
+    <br><br>
+    <p>Normalization Using  MinMax Scaler</p>
+    {{ data_scaled | safe }}
+    <br><br>
+    <p>
+        Input ratio between data training and data testing and 
+        Input the initialization of parameter below.
+    </p>
+    <form action="{{ url_for('predict_svr_multi') }}" method="POST">
+        <div class="row">
+            <div class="col-25">
+                <label for="training-rasio" class="name-label">Data Training Size</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="train-multi" step="0.01" placeholder="Input Data Training Size" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="testing-rasio" class="name-label">Data Testing Size</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="test-multi" step="0.01" placeholder="Input Data Testing Size" required>
+            </div>
+        </div>     
+        <div class="row">
+            <div class="col-25">
+                <label for="value-clr" class="name-label">cLR</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="clr-multi" step="0.00001" placeholder="Input value of cLR" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-c" class="name-label">C</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="c-multi" step="0.00001" placeholder="Input value of C" required>
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-25">
+                <label for="value-epsilon" class="name-label">epsilon</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="epsilon-multi" step="0.00001" placeholder="Input value of epsilon" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-lambda" class="name-label">lambda</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="lambda-multi" step="0.00001" placeholder="Input value of lambda" required>
+            </div>
+        </div>                    
+        <div class="row">
+            <div class="col-25">
+                <label for="value-sigma" class="name-label">sigma</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="sigma-multi" step="0.00001" placeholder="Input value of sigma" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-iteration" class="name-label">Number of Iteration</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="iteration-multi" step="0.00001" placeholder="Input Number of Iteration" required>
+            </div>
+        </div>      
+        <div class="info">
+            <p>
+                Suggestion from us, best parameter values are cLR is 0.01, C is 100, epsilon is 0.001, 
+                lambda is 0.001, sigma is 1, number of iterations is 50
+            </p>
+        </div>                                     
+        <div class="row">                        
+            <input type="submit" value="Do Predictions">
+        </div>        
+    </form>    
+</div>  
+{% endblock %}

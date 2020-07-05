@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}
+Holt-Winters
+{% endblock %}
+{% block content %}
+<p>Holt-Winters</p>               
+<div class="form-group">
+    <p>Dataset</p>
+    {{ data | safe }}
+    <br>
+    <form action="{{ url_for('predict_holt_winters') }}" method="POST">        
+        <div class="row">
+            <div class="col-25">
+                <label for="value-alpha" class="name-label">Alpha</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="alpha" step="0.0001" placeholder="Input Value for Alpha" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-beta" class="name-label">Beta</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="beta" step="0.0001" placeholder="Input Value for Beta" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-gamma" class="name-label">Gamma</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="gamma" step="0.0001" placeholder="Input Value for Gamma" required>
+            </div>
+        </div>
+        <div class="info">
+            <p>                            
+                Suggestion from us, best parameter values to initialization of Smoothing, Trend and Seasonal from 2011 - 2019 are: 
+                alpha smaller than 0.5, beta smaller than 0.5, gamma greater than 0.5
+            </p>
+        </div>
+        <div class="row">                        
+            <input type="submit" value="Next">                       
+        </div>
+    </form> 
+</div>            
+{% endblock %}
