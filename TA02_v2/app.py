@@ -858,11 +858,11 @@ def predict_svr_multi():
         y_train, y_test = y[:split_dataset], y[split_dataset:]
 
         # Best Parameter Values based on Researchers (TA1920-02/us)
-        # C=0.5 s/d 50, cLR=0.01, epsilon=0.01, lambda=0.1, sigma=1, iterasi=50
+        # C=0.5 s/d 50, cLR=0.01, epsilon=0.001, lambda=0.1, sigma=1, iterasi=50
         cLR = 0.01
-        C = 100
+        C = 50
         epsilon = 0.001
-        _lambda = 0.001
+        _lambda = 0.1
         sigma = 1
         iteration = int(request.form["iteration-multi"])
 
