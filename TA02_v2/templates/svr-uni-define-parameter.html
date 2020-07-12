@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block title %}
+Univariate Support Vector Regression
+{% endblock %}
+{% block content %}
+<p>Define Parameter Values of Univariate Support Vector Regression</p>             
+<div class="form-group">
+    <p>
+        Input ratio between data training and data testing and 
+        Input the initialization of parameter below.
+    </p>
+    <form action="{{ url_for('predict_svr_uni_define') }}" method="POST">
+        <div class="row">
+            <div class="col-25">
+                <label for="training-rasio" class="name-label">Data Training Size</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="train-uni" step="1" placeholder="Input Data Training Size" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="testing-rasio" class="name-label">Data Testing Size</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="test-uni" step="1" placeholder="Input Data Testing Size" required>
+            </div>
+        </div>         
+        <div class="row">
+            <div class="col-25">
+                <label for="value-c" class="name-label">C</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="c-uni" step="0.00001" placeholder="Input value of C" required>
+            </div>
+        </div>  
+        <div class="row">
+            <div class="col-25">
+                <label for="value-clr" class="name-label">cLR</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="clr-uni" step="0.00001" placeholder="Input value of cLR" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-epsilon" class="name-label">epsilon</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="epsilon-uni" step="0.00001" placeholder="Input value of epsilon" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-lambda" class="name-label">lambda</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="lambda-uni" step="0.00001" placeholder="Input value of lambda" required>
+            </div>
+        </div>                    
+        <div class="row">
+            <div class="col-25">
+                <label for="value-sigma" class="name-label">sigma</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="sigma-uni" step="0.00001" placeholder="Input value of sigma" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="value-iteration" class="name-label">Number of Iteration</label>
+            </div>
+            <div class="col-75">
+                <input type="number" name="iteration-uni" step="1" placeholder="Input Number of Iteration" required>
+            </div>
+        </div>      
+        <div class="info">
+            <p>
+                Suggestion from us (TA1920-02), best parameter values are C = 0.5 s/d 50, cLR = 0.01, epsilon = 0.001, 
+                lambda = 0.00001 s/d 0.01, sigma = 0.5, and number of iterations = 50.                
+            </p>
+        </div>                                     
+        <div class="row">                        
+            <input type="submit" value="Do Predictions">
+        </div>        
+    </form>    
+</div>            
+{% endblock %}

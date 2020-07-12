@@ -5,10 +5,18 @@ Holt-Winters
 {% block content %}
 <p>Holt-Winters</p>               
 <div class="form-group">
-    <p>
-        The data that has been calculated using alpha = {{ alpha }}, 
-        beta = {{ beta }}, gamma = {{ gamma }}
-    </p>    
+    {% if request.method == "POST" %}
+        <p>
+            The data that has been calculated using alpha = {{ alpha }}, 
+            beta = {{ beta }}, gamma = {{ gamma }}
+        </p> 
+    {% else %}
+        <p>
+            Here is the results of the predictions using the best parameters that have been 
+            sought by researchers (TA1920-02/us). Best value of parameter are alpha = {{ alpha }}, 
+            beta = {{ beta }}, gamma = {{ gamma }}
+        </p>
+    {% endif %}
     <br>
     <div class="row">
         <div class="col-50">            

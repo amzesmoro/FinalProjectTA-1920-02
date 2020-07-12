@@ -6,13 +6,15 @@ Multivariate SVR
 <p>Time Series Multivariate Support Vector Regression</p>                           
 <div class="form-group">    
     <p>
-        Prediction based on Ratio Data {{ trainMulti }}:{{ testMulti }}<br>
+        Prediction to Data Test based on Ratio Data {{ trainMulti }}:{{ testMulti }}<br>
         Table below is prediction with ratio data training and data testing is 
         {{ trainMulti }}:{{ testMulti }} using Multivariate SVR, with the value 
         parameter are cLR = {{ clrMulti }}, C = {{ cMulti }}, epsilon = {{ epsilonMulti }}, 
         lambda = {{ lambdaMulti }}, sigma = {{ sigmaMulti }}, Number of Iteration = {{ iterationMulti }}<br>
         MAPE Multivariate SVR based on Ratio {{ trainMulti }}:{{ testMulti }} is {{ mape_test }}%
-    </p>   
+    </p> 
+    <br>  
+    <p>Prediction Data Test</p>
     {{ predictionMulti | safe }}  
     <div class="row">
         <a href="{{ url_for('home') }}"><button type="button" class="next-btn">Done Prediction</button></a>
