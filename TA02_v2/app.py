@@ -162,8 +162,8 @@ def predict_holt_winters():
         data_additive = prediksiAdd
         df_prediction_add = pd.DataFrame(data_additive, 
                         columns=["Prediksi Wisatawan"],
-                        index=['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 
-                                'Agustus', 'September', 'Oktober', 'November', 'Desember'])
+                        index=['Januari 2020', 'Februari 2020', 'Maret 2020', 'April 2020', 'Mei 2020', 'Juni 2020', 'Juli 2020', 
+                                'Agustus 2020', 'September 2020', 'Oktober 2020', 'November 2020', 'Desember 20202'])
 
         ## Multiplicative
         data_multiplicative = df.iloc[:,1]
@@ -254,7 +254,7 @@ def predict_holt_winters():
         df_prediction_mul = pd.DataFrame(data_multiplicative,
                         columns=["Prediksi Wisatawan"],
                         index=['Januari 2020', 'Februari 2020', 'Maret 2020', 'April 2020', 'Mei 2020', 'Juni 2020', 'Juli 2020', 
-                                'Agustus 2020', 'September 2020', 'Oktober 2020', 'November 2020', 'Desember 20202'])
+                                'Agustus 2020', 'September 2020', 'Oktober 2020', 'November 2020', 'Desember 2020'])
 
         return render_template("predict-holt-winters.html", 
             alpha = alpa, beta = beta, gamma = gamma,
@@ -454,7 +454,7 @@ def predict_holt_winters():
         df_prediction_mul = pd.DataFrame(data_multiplicative,
                         columns=["Prediksi Wisatawan"],
                         index=['Januari 2020', 'Februari 2020', 'Maret 2020', 'April 2020', 'Mei 2020', 'Juni 2020', 'Juli 2020', 
-                                'Agustus 2020', 'September 2020', 'Oktober 2020', 'November 2020', 'Desember 20202'])
+                                'Agustus 2020', 'September 2020', 'Oktober 2020', 'November 2020', 'Desember 2020'])
 
         return render_template("predict-holt-winters.html", 
             alpha = alpa, beta = beta, gamma = gamma,
