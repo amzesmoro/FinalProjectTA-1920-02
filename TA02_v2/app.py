@@ -655,7 +655,7 @@ def predict_svr_uni():
         
         index_feature_2020 = [
             'June 2019', 'July 2019', 'August 2019', 'September 2019', 'October 2019', 'November 2019', 'December 2019', 
-            'January 2020', 'February 2020', 'March 2020', 'April 2020', 'May 2020'
+            'January 2020', 'February 2020'
         ]
         df_prediction_2020 = pd.concat([df_denormalized_y_actual_2020, df_denormalized_y_feature_2020], axis=1)
         df_predict_feature_2020 = pd.DataFrame(df_prediction_2020.values, index=[index_feature_2020], columns=['Jumlah Wisatawan', 'Prediksi 2020'])
@@ -824,7 +824,7 @@ def predict_svr_uni_define():
         
         index_feature_2020 = [
             'June 2019', 'July 2019', 'August 2019', 'September 2019', 'October 2019', 'November 2019', 'December 2019', 
-            'January 2020', 'February 2020', 'March 2020', 'April 2020', 'May 2020'
+            'January 2020', 'February 2020'
         ]
         df_prediction_2020 = pd.concat([df_denormalized_y_actual_2020, df_denormalized_y_feature_2020], axis=1)
         df_predict_feature_2020 = pd.DataFrame(df_prediction_2020.values, index=[index_feature_2020], columns=['Jumlah Wisatawan', 'Prediksi 2020'])
