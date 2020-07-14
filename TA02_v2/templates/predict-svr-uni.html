@@ -3,24 +3,24 @@
 Univariate SVR
 {% endblock %}
 {% block content %}
-<p>Time Series Univariate Support Vector Regression</p>                           
-<div class="form-group">    
+<p>Time Series Univariate Support Vector Regression</p>
+<div class="form-group">
     <p>
         Prediction to Data Test based on Ratio Data {{ trainUni }}:{{ testUni }}<br>
-        Table below is prediction with ratio data training and data testing is 
-        {{ trainUni }}:{{ testUni }} using Univariate SVR, with the value 
-        parameter are cLR = {{ clrUni }}, C = {{ cUni }}, epsilon = {{ epsilonUni }}, 
+        Table below is prediction with ratio data training and data testing is
+        {{ trainUni }}:{{ testUni }} using Univariate SVR, with the value
+        parameter are cLR = {{ clrUni }}, C = {{ cUni }}, epsilon = {{ epsilonUni }},
         lambda = {{ lambdaUni }}, sigma = {{ sigmaUni }}, Number of Iteration = {{ iterationUni }}<br>
         MAPE Univariate SVR based on Ratio {{ trainUni }}:{{ testUni }} is {{ mape_test }}%
     </p>
-    <br>   
+    <br>
     <p>Prediction Data Test</p>
-    {{ predictionUni | safe }}        
+    {{ predictionUni | safe }}
     <br>
     <p>Prediction 2020</p>
     {{ prediction_2020 | safe }}
     <div class="row">
         <a href="{{ url_for('home') }}"><button type="button" class="next-btn">Done Prediction</button></a>
     </div>
-</div>  
+</div>
 {% endblock %}

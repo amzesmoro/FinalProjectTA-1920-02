@@ -3,19 +3,21 @@
 Multivariate SVR
 {% endblock %}
 {% block content %}
-<p>Time Series Multivariate Support Vector Regression</p>                           
+<p>Time Series Multivariate Support Vector Regression</p>
 <div class="form-group">
     <p>Dataset</p>
     {{ data | safe }}
     <br><br>
-    <p>Normalization Using  MinMax Scaler</p>
+    <p>Normalization Using MinMax Scaler</p>
     {{ data_scaled | safe }}
     <br>
     <div class="list-btn">
-        <a href="{{ url_for('svr_multi_define_parameter') }}"><button type="button" class="btn-processing">Input Parameter Values</button></a>                                                                    
-        <button type="button" id="btn-processing" onclick="inputSplittingData('input-splitting-data')">Input Splitting Data</button>
+        <a href="{{ url_for('svr_multi_define_parameter') }}"><button type="button" class="btn-processing">Input
+                Parameter Values</button></a>
+        <button type="button" id="btn-processing" onclick="inputSplittingData('input-splitting-data')">Input Splitting
+            Data</button>
     </div>
-    <div id="input-splitting-data"> 
+    <div id="input-splitting-data">
         <p>Input ratio between data training and data testing for Multivariate SVR</p>
         <form action="{{ url_for('predict_svr_multi') }}" method="POST">
             <div class="row">
@@ -33,25 +35,26 @@ Multivariate SVR
                 <div class="col-75">
                     <input type="number" name="test-multi" step="1" placeholder="Input Data Testing Size" required>
                 </div>
-            </div>  
+            </div>
             <div class="row">
                 <div class="col-25">
                     <label for="value-iteration" class="name-label">Number of Iteration</label>
                 </div>
                 <div class="col-75">
-                    <input type="number" name="iteration-multi" step="1" placeholder="Input Number of Iteration" required>
+                    <input type="number" name="iteration-multi" step="1" placeholder="Input Number of Iteration"
+                        required>
                 </div>
-            </div>                        
-            <div class="row">                        
+            </div>
+            <div class="row">
                 <input type="submit" value="Do Predictions">
             </div>
-        </form>                                                           
+        </form>
     </div>
-</div>  
+</div>
 <script>
     function inputSplittingData(id) {
         var x = document.getElementById(id);
-        if(x.style.display == "block") {
+        if (x.style.display == "block") {
             x.style.display = "none";
         } else {
             x.style.display = "block"

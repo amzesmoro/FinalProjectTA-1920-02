@@ -16,7 +16,7 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
-    background-color: #F1F1F1;   
+    background-color: #F1F1F1;
 }
 
 .main-nav {
@@ -32,16 +32,16 @@ footer {
     margin-left: 10px;
 }
 
-.nav-links, 
+.nav-links,
 .logo {
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 .navbar a {
     color: #555555;
 }
 
-@media screen and (min-width: 768px) {    
+@media screen and (min-width: 768px) {
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -49,9 +49,9 @@ footer {
         height: 70px;
         align-items: center;
         padding-right: 20px;
-        padding-left: 20px; 
-        background-color: #F1F1F1;       
-    }   
+        padding-left: 20px;
+        background-color: #F1F1F1;
+    }
 
     .main-nav {
         display: flex;
@@ -60,7 +60,7 @@ footer {
         justify-content: flex-end;
         font-size: 25px;
     }
-    
+
     .main-nav li {
         margin: 0;
     }
@@ -71,7 +71,7 @@ footer {
 
     .logo {
         font-size: 30px;
-        margin-top: 0;        
+        margin-top: 0;
     }
 
     .navbar-toggle {
@@ -79,12 +79,12 @@ footer {
     }
 
     .logo:hover,
-    .nav-links:hover {        
+    .nav-links:hover {
         color: black;
-    }     
+    }
 }
 
-.content {   
+.content {
     padding-bottom: 50px;
 }
 
@@ -123,48 +123,48 @@ footer {
 
 .btn-holt,
 .btn-svr {
-    background-color:#F1F1F1;
+    background-color: #F1F1F1;
     border: 2px solid #555555;
     border-radius: 10px;
     color: black;
     text-align: center;
-    font-size: 20px;   
+    font-size: 20px;
     cursor: pointer;
-    padding: 15px 15px;   
-    transition-duration: 0.4s;  
-    width: 35%;  
+    padding: 15px 15px;
+    transition-duration: 0.4s;
+    width: 35%;
 }
 
 .btn-prep-svr-uni,
 #btn-preview-prep-svr-uni {
-    background-color:#F1F1F1;
+    background-color: #F1F1F1;
     border: 2px solid #555555;
     border-radius: 10px;
     color: black;
     text-align: center;
-    font-size: 20px;   
+    font-size: 20px;
     cursor: pointer;
     padding: 15px 15px;
-    margin: 0px 10px 0px 10px;     
-    transition-duration: 0.4s;  
-    width: 30%;  
+    margin: 0px 10px 0px 10px;
+    transition-duration: 0.4s;
+    width: 30%;
 }
 
 .btn-processing,
 .btn-prep-svr-multi,
 #btn-processing,
 #btn-preview-prep-svr-multi {
-    background-color:#F1F1F1;
+    background-color: #F1F1F1;
     border: 2px solid #555555;
     border-radius: 10px;
     color: black;
     text-align: center;
-    font-size: 20px;   
+    font-size: 20px;
     cursor: pointer;
-    padding: 15px 15px;   
-    margin: 0px 20px 0px 20px; 
-    transition-duration: 0.4s;  
-    width: 45%;  
+    padding: 15px 15px;
+    margin: 0px 20px 0px 20px;
+    transition-duration: 0.4s;
+    width: 45%;
 }
 
 .btn-processing:hover,
@@ -175,7 +175,7 @@ footer {
 #btn-preview-prep-svr-uni:hover,
 #btn-preview-prep-svr-multi:hover,
 #btn-processing:hover,
-.next-btn:hover {   
+.next-btn:hover {
     background-color: #555555;
     color: white;
     font-weight: bold;
@@ -184,7 +184,7 @@ footer {
 .name-label {
     padding: 12px 12px 12px 0;
     display: inline-block;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 input[type=number] {
@@ -193,21 +193,21 @@ input[type=number] {
     border: 1px solid #cccccc;
     border-radius: 4px;
     resize: vertical;
-    font-size: 20px;  
+    font-size: 20px;
 }
 
-input[type=submit] {  
-    background-color:#F1F1F1;
+input[type=submit] {
+    background-color: #F1F1F1;
     border: 2px solid #555555;
     border-radius: 10px;
     color: black;
     text-align: center;
-    font-size: 20px;   
+    font-size: 20px;
     cursor: pointer;
-    padding: 15px 15px;   
-    transition-duration: 0.4s;  
+    padding: 15px 15px;
+    transition-duration: 0.4s;
     float: right;
-    width: 30%;  
+    width: 30%;
     margin-top: 15px;
 }
 
@@ -218,16 +218,16 @@ input[type=submit]:hover {
 }
 
 
-.next-btn {  
-    background-color:#F1F1F1;
+.next-btn {
+    background-color: #F1F1F1;
     border: 2px solid #555555;
     border-radius: 10px;
     color: black;
     text-align: center;
-    font-size: 20px;   
+    font-size: 20px;
     cursor: pointer;
-    padding: 15px 15px;   
-    transition-duration: 0.4s;  
+    padding: 15px 15px;
+    transition-duration: 0.4s;
     width: 30%;
     float: right;
     margin-top: 20px;
@@ -237,7 +237,7 @@ input[type=submit]:hover {
 .form-group {
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;    
+    padding: 20px;
 }
 
 .form-group p {
@@ -245,7 +245,7 @@ input[type=submit]:hover {
     text-align: justify;
 }
 
-.form-group h4 {    
+.form-group h4 {
     font-size: 20px;
     text-align: center;
 }
@@ -263,9 +263,9 @@ input[type=submit]:hover {
     font-size: 14px;
 }
 
-.col-50 h4{
+.col-50 h4 {
     text-align: center;
-    font-size: 25px;    
+    font-size: 25px;
 }
 
 .col-75 {
@@ -287,8 +287,8 @@ input[type=submit]:hover {
     display: block;
 }
 
-.fixed-table thead, 
-.fixed-table tbody tr{
+.fixed-table thead,
+.fixed-table tbody tr {
     table-layout: fixed;
     width: 100%;
     display: table;
@@ -309,7 +309,7 @@ input[type=submit]:hover {
     padding: .35em;
 }
 
-.fixed-table th, 
+.fixed-table th,
 .fixed-table td {
     padding: .625em;
     text-align: center;
@@ -321,28 +321,28 @@ input[type=submit]:hover {
 }
 
 tr:nth-child(even) {
-    background-color: white; 
+    background-color: white;
 }
 
 .alert p {
     border-radius: 5px;
-    text-align: justify;   
+    text-align: justify;
     font-size: 16px;
-    padding: 10px;  
-    color:#a94442;
-    background-color:#f2dede;
-    border-color:#ebccd1;
+    padding: 10px;
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
 }
 
 .info p {
     border-radius: 5px;
-    text-align: justify;   
+    text-align: justify;
     font-size: 16px;
-    margin: 10px;   
-    padding: 10px;   
-    color:#31708f;
-    background-color:#d9edf7;
-    border-color:#bce8f1;
+    margin: 10px;
+    padding: 10px;
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
 }
 
 img {
@@ -350,14 +350,16 @@ img {
 }
 
 hr {
-    border:  1px solid black;
+    border: 1px solid black;
 }
 
-@media screen and (max-width: 600px) { 
+@media screen and (max-width: 600px) {
     h2 {
         font-size: 18px;
     }
-    .col-25, .col-50 .col-75 {
+
+    .col-25,
+    .col-50 .col-75 {
         width: 100%;
         margin-top: 0;
     }
@@ -377,13 +379,13 @@ hr {
     .card p {
         text-align: center;
         font-size: 16px;
-        font-weight: bold;       
+        font-weight: bold;
     }
 
     .alert p,
     .info p {
-        font-size: 14px;  
-        text-align: justify;  
+        font-size: 14px;
+        text-align: justify;
     }
 
     /* .list-btn {
@@ -391,13 +393,13 @@ hr {
         text-align: center;
         padding-bottom: 10px;
     } */
-    
+
     .btn-holt,
-    .btn-svr, 
+    .btn-svr,
     .next-btn {
-        font-size: 16px;   
-        padding: 10px 10px;   
-        width: 100%;  
+        font-size: 16px;
+        padding: 10px 10px;
+        width: 100%;
     }
 
     #btn-processing,
@@ -430,7 +432,7 @@ hr {
     .active {
         display: block;
     }
-  
+
     .main-nav li {
         text-align: center;
         margin: 15px auto;
@@ -445,8 +447,8 @@ hr {
     }
 
     .name-label {
-        padding: 1px 1px 1px 0;        
-        font-size: 16px; 
+        padding: 1px 1px 1px 0;
+        font-size: 16px;
     }
 
     input[type=number] {
@@ -468,13 +470,13 @@ hr {
         font-size: 14px;
         text-align: justify;
     }
-    
-    .form-group h4 {    
+
+    .form-group h4 {
         font-size: 16px;
         text-align: center;
     }
 
-    .col-50 h4{        
+    .col-50 h4 {
         font-size: 10px;
     }
 
@@ -521,18 +523,18 @@ hr {
     .fixed-table td:last-child {
         border-bottom: 0;
     }
-        
+
     #upload-textname-hw,
     #upload-textname-svr-uni,
-    #upload-textname-svr-multi {     
-        font-size: 10px;  
-        margin-bottom: 10px;   
+    #upload-textname-svr-multi {
+        font-size: 10px;
+        margin-bottom: 10px;
     }
 
     #btn-upload-hw,
     #btn-upload-svr-uni,
     #btn-upload-svr-multi,
-    #btn-upload-data {        
+    #btn-upload-data {
         padding: 10px;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -541,53 +543,53 @@ hr {
 
     #upload-textname-hw,
     #upload-textname-svr-uni,
-    #upload-textname-svr-multi {             
+    #upload-textname-svr-multi {
         padding: 10px;
-        width: 100%;  
+        width: 100%;
         display: inline-block;
     }
 
     #input-splitting-data,
     #preview-prep-svr-uni,
-    #preview-prep-svr-multi {                                    
+    #preview-prep-svr-multi {
         margin: 10px 5px;
         padding: 50px;
-        
+
     }
 }
 
-.form-upload {     
-    margin-top: 20px;  
+.form-upload {
+    margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
 }
-  
+
 #upload-textname-hw,
 #upload-textname-svr-uni,
-#upload-textname-svr-multi {     
-    color: #aaa;    
+#upload-textname-svr-multi {
+    color: #aaa;
     border: 2px solid black;
     border-radius: 10px;
     padding: 12px;
-    width: 70%;  
+    width: 70%;
     display: inline-block;
 }
-  
+
 #btn-upload-hw,
 #btn-upload-svr-uni,
 #btn-upload-svr-multi,
-#btn-upload-data  {
-    padding: 12px;    
-    background-color:cadetblue;    
+#btn-upload-data {
+    padding: 12px;
+    background-color: cadetblue;
     border-radius: 10px;
-    cursor: pointer;   
+    cursor: pointer;
     color: #fff;
-    font-size: 16px;  
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: bold;
-    border: 2px solid black;    
+    border: 2px solid black;
 }
-  
+
 #btn-upload-hw:hover,
 #btn-upload-svr-uni:hover,
 #btn-upload-svr-multi:hover,
@@ -597,11 +599,11 @@ hr {
 
 #input-splitting-data,
 #preview-prep-svr-uni,
-#preview-prep-svr-multi {    
-    background-color: lavender;     
+#preview-prep-svr-multi {
+    background-color: lavender;
     padding: 20px;
     margin: 20px 35px;
     border-radius: 10px;
     border: 2px solid black;
-    display: none;   
+    display: none;
 }

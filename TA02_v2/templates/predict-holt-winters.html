@@ -1,32 +1,33 @@
-{% extends "layout.html" %}The data that has been calculated using alpha = {{ alpha }}, beta = {{ beta }}, gamma = {{ gamma }} and number of iteration is {{ iteration }}
+{% extends "layout.html" %}The data that has been calculated using alpha = {{ alpha }}, beta = {{ beta }}, gamma =
+{{ gamma }} and number of iteration is {{ iteration }}
 {% block title %}
 Holt-Winters
 {% endblock %}
 {% block content %}
-<p>Holt-Winters</p>               
+<p>Holt-Winters</p>
 <div class="form-group">
     {% if request.method == "POST" %}
-        <p>
-            The data that has been calculated using alpha = {{ alpha }}, 
-            beta = {{ beta }}, gamma = {{ gamma }}
-        </p> 
+    <p>
+        The data that has been calculated using alpha = {{ alpha }},
+        beta = {{ beta }}, gamma = {{ gamma }}
+    </p>
     {% else %}
-        <p>
-            Here is the results of the predictions using the best parameters that have been 
-            sought by researchers (TA1920-02/us). Best value of parameter are alpha = {{ alpha }}, 
-            beta = {{ beta }}, gamma = {{ gamma }}
-        </p>
+    <p>
+        Here is the results of the predictions using the best parameters that have been
+        sought by researchers (TA1920-02/us). Best value of parameter are alpha = {{ alpha }},
+        beta = {{ beta }}, gamma = {{ gamma }}
+    </p>
     {% endif %}
     <br>
     <div class="row">
-        <div class="col-50">            
+        <div class="col-50">
             <h4>
                 Smoothing Awal<br>
                 Additive: {{ smoothingadd }}<br>
                 Multiplicative: {{ smoothingmul }}
             </h4>
         </div>
-        <div class="col-50">            
+        <div class="col-50">
             <h4>
                 Trend Awal<br>
                 Additive: {{ trendadd }}<br>
@@ -38,21 +39,21 @@ Holt-Winters
     <h4>Seasonal Awal</h4>
     <p>Seasonal Awal Additive</p>
     <br>
-    {{ df_musimanadd | safe }} 
+    {{ df_musimanadd | safe }}
     <br>
     <p>Seasonal Awal Multiplicative</p>
     <br>
-    {{ df_musimanmul | safe }}   
+    {{ df_musimanmul | safe }}
     <br>
-    <p>Prediction Using Additive</p>    
+    <p>Prediction Using Additive</p>
     <p>MAPE of Holt-Winters Additive= {{ mape_additive }}%</p>
     {{ prediction_additive | safe}}
     <br><br>
-    <p>Prediction Using Multiplicative</p>    
+    <p>Prediction Using Multiplicative</p>
     <p>MAPE of Holt-Winters Multiplicative= {{ mape_multiplicative }}%</p>
-    {{ prediction_multiplicative | safe}}    
+    {{ prediction_multiplicative | safe}}
     <div class="row">
         <a href="{{ url_for('home') }}"><button type="button" class="next-btn">Done Prediction</button></a>
     </div>
-</div>            
+</div>
 {% endblock %}

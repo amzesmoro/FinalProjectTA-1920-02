@@ -3,9 +3,9 @@
 Holt-Winters
 {% endblock %}
 {% block content %}
-<p>Define Parameter Values of Holt-Winters</p>             
+<p>Define Parameter Values of Holt-Winters</p>
 <div class="form-group">
-    <form action="{{ url_for('predict_holt_winters') }}" method="POST">        
+    <form action="{{ url_for('predict_holt_winters') }}" method="POST">
         <div class="row">
             <div class="col-25">
                 <label for="value-alpha" class="name-label">Alpha</label>
@@ -31,14 +31,15 @@ Holt-Winters
             </div>
         </div>
         <div class="info">
-            <p>                            
-                Suggestion from us, best parameter values to initialization of Smoothing, Trend and Seasonal from 2011 - 2019 are: 
+            <p>
+                Suggestion from us, best parameter values to initialization of Smoothing, Trend and Seasonal from 2011 -
+                2019 are:
                 alpha smaller than 0.5, beta smaller than 0.5, gamma greater than 0.5
             </p>
         </div>
-        <div class="row">                        
-            <input type="submit" value="Next">                       
+        <div class="row">
+            <input type="submit" value="Next">
         </div>
-    </form> 
-</div>            
+    </form>
+</div>
 {% endblock %}

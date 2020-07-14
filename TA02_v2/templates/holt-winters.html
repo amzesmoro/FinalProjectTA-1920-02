@@ -3,14 +3,16 @@
 Holt-Winters
 {% endblock %}
 {% block content %}
-<p>Holt-Winters</p>               
+<p>Holt-Winters</p>
 <div class="form-group">
     <p>Dataset</p>
     {{ data | safe }}
     <br>
     <div class="list-btn">
-        <a href="{{ url_for('holt_winters_define_parameter') }}"><button type="button" class="btn-processing">Input Parameter Values</button></a>                                                                    
-        <a href="{{ url_for('predict_holt_winters') }}"><button type="button" class="btn-processing">Do Predictions</button></a>    
+        <a href="{{ url_for('holt_winters_define_parameter') }}"><button type="button" class="btn-processing">Input
+                Parameter Values</button></a>
+        <a href="{{ url_for('predict_holt_winters') }}"><button type="button" class="btn-processing">Do
+                Predictions</button></a>
     </div>
-</div>            
+</div>
 {% endblock %}

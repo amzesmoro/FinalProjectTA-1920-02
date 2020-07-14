@@ -3,10 +3,10 @@
 Multivariate Support Vector Regression
 {% endblock %}
 {% block content %}
-<p>Define Parameter Values of Multivariate Support Vector Regression</p>             
+<p>Define Parameter Values of Multivariate Support Vector Regression</p>
 <div class="form-group">
     <p>
-        Input ratio between data training and data testing and 
+        Input ratio between data training and data testing and
         Input the initialization of parameter below.
     </p>
     <form action="{{ url_for('predict_svr_multi_define') }}" method="POST">
@@ -25,7 +25,7 @@ Multivariate Support Vector Regression
             <div class="col-75">
                 <input type="number" name="test-multi" step="1" placeholder="Input Data Testing Size" required>
             </div>
-        </div>            
+        </div>
         <div class="row">
             <div class="col-25">
                 <label for="value-c" class="name-label">C</label>
@@ -41,7 +41,7 @@ Multivariate Support Vector Regression
             <div class="col-75">
                 <input type="number" name="clr-multi" step="0.00001" placeholder="Input value of cLR" required>
             </div>
-        </div>  
+        </div>
         <div class="row">
             <div class="col-25">
                 <label for="value-epsilon" class="name-label">epsilon</label>
@@ -57,7 +57,7 @@ Multivariate Support Vector Regression
             <div class="col-75">
                 <input type="number" name="lambda-multi" step="0.00001" placeholder="Input value of lambda" required>
             </div>
-        </div>                    
+        </div>
         <div class="row">
             <div class="col-25">
                 <label for="value-sigma" class="name-label">sigma</label>
@@ -73,16 +73,16 @@ Multivariate Support Vector Regression
             <div class="col-75">
                 <input type="number" name="iteration-multi" step="1" placeholder="Input Number of Iteration" required>
             </div>
-        </div>      
+        </div>
         <div class="info">
             <p>
-                Suggestion from us (TA1920-02), best parameter values are C = 0.5 s/d 50, cLR = 0.01, epsilon = 0.001, 
+                Suggestion from us (TA1920-02), best parameter values are C = 0.5 s/d 50, cLR = 0.01, epsilon = 0.001,
                 lambda = 0.1, sigma = 1, and number of iterations = 50.
             </p>
-        </div>                                     
-        <div class="row">                        
+        </div>
+        <div class="row">
             <input type="submit" value="Do Predictions">
-        </div>       
-    </form>    
-</div>            
+        </div>
+    </form>
+</div>
 {% endblock %}
